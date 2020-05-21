@@ -19,8 +19,8 @@ func main() {
 	// parse args
 	deviceID := os.Args[1]
 	//Replace this with your path to files
-	model := "/Users/lukeparker/go/src/godescribeAPI/cmd/godescribe/tensorflow_inception_graph.pb"
-	descr := "/Users/lukeparker/go/src/godescribeAPI/cmd/godescribe/imagenet_comp_graph_label_strings.txt"
+	model := "/Users/lukeparker/go/src/Boundri/models/objects/graphs/tensorflow_inception_graph.pb"
+	descr := "/Users/lukeparker/go/src/Boundri/models/objects/labels/imagenet_comp_graph_label_strings.txt"
 	descriptions, err := readDescriptions(descr)
 	if err != nil {
 		fmt.Printf("Error reading descriptions file: %v\n", descr)
@@ -34,7 +34,7 @@ func main() {
 	// open capture device
 	webcam, err := gocv.OpenVideoCapture(deviceID)
 	if err != nil {
-		fmt.Printf("Error opening video capture device: %v\n", deviceID)
+		fmt.Printf("Error while reading image: %v\n", deviceID)
 		return
 	}
 	defer webcam.Close()

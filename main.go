@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-
 	"os/exec"
-
 	"github.com/gorilla/mux"
 )
 
@@ -20,7 +18,7 @@ func homeLink(w http.ResponseWriter, r *http.Request) {
 	}
 
 	key := keys[0]
-	description, err := exec.Command("go", "run", "cmd/godescribe/main.go", key).Output()
+	description, err := exec.Command("go", "run", "cmd/go/detect.go", key).Output()
 
 	if err != nil {
 		panic(err)
