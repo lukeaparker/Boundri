@@ -19,8 +19,8 @@ func main() {
 	// parse args
 	deviceID := os.Args[1]
 	//Replace this with your path to files
-	model := "/Users/lukeparker/go/src/Boundri/models/objects/graphs/tensorflow_inception_graph.pb"
-	descr := "/Users/lukeparker/go/src/Boundri/models/objects/labels/imagenet_comp_graph_label_strings.txt"
+	model := "./models/objects/graphs/tensorflow_inception_graph.pb"
+	descr := "./models/objects/labels/imagenet_comp_graph_label_strings.txt"
 	descriptions, err := readDescriptions(descr)
 	if err != nil {
 		fmt.Printf("Error reading descriptions file: %v\n", descr)
